@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import List from "../ui/layout/List.vue";
-import Item from "../ui/layout/Item.vue";
-import Divider from "../ui/layout/Divider.vue";
-import SidebarShell from "../ui/shells/sidebar/SidebarShell.vue";
+import List from "../ui/layouts/List.vue";
+import Item from "../ui/layouts/Item.vue";
+import Divider from "../ui/layouts/Divider.vue";
+import StackedShell from "../ui/shells/stacked/StackedShell.vue";
+import NavBar from "../ui/navigations/NavBar.vue";
 </script>
 
 <template>
-  <SidebarShell>
+  <StackedShell>
     <template #nav>
-      Navs
+      <NavBar/>
     </template>
     <template #header>
       Dashboard
@@ -19,5 +20,5 @@ import SidebarShell from "../ui/shells/sidebar/SidebarShell.vue";
       <Item> 2 </Item>
       <Item> 3 </Item>
     </List>
-  </SidebarShell>
+  </StackedShell>
 </template>
