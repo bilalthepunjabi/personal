@@ -1,20 +1,20 @@
 <script setup lang="ts">
-import Panel from "../ui/layout/Panel.vue"
+import List from "../ui/layout/List.vue"
+import Item from "../ui/layout/Item.vue"
 </script>
 
 <template>
   <main>
-    <Panel>
-      <template #header>
-        <h1>Here might be a page title</h1>
-      </template>
-      
-      <p>A paragraph for the main content.</p>
-      <p>And another one.</p>
-
-      <template #footer>
-        <p>Here's some contact info</p>
-      </template>
-    </Panel>
+    <List>
+     <Item>
+       1
+     </Item>
+     <Item>
+       2
+     </Item>
+     <Item>
+       3
+     </Item>
+    </List>
   </main>
 </template>
