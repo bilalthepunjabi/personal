@@ -11,12 +11,8 @@ import NavBar from "../ui/navigations/NavBar.vue";
     <template #nav>
       <NavBar/>
     </template>
-    <template #header>
-      Dashboard
-    </template>
     <List>
       <Item> 1 </Item>
-      <Divider text="continue" />
       <Item> 2 </Item>
       <Item> 3 </Item>
     </List>
