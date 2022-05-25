@@ -1,39 +1,29 @@
 <script lang="ts">
 import { defineComponent, defineProps, reactive, ref } from "vue";
-import type { PropType } from 'vue'
+import type { PropType } from "vue";
+import { RouterLink, RouterView } from "vue-router";
 
-import { RouterLink, RouterView } from 'vue-router'
-import Container from './components/Container.vue'
-
-interface state {
-  constrained: Object
-}
+import Container from "./components/Container.vue";
 
 export default defineComponent({
   name: "App",
-  components:{
+  components: {
     Container,
-    RouterView
+    RouterView,
   },
-  data(){
-    return {
-      constrained : {
-        narrow : false
-      }
-    }
+  data() {
+    return {};
   },
-  methods: {
-
-  },
+  methods: {},
 });
 </script>
 
 <template>
-  <Container :constrained="constrained">
-    <RouterView/>
+  <Container>
+    <RouterView />
   </Container>
 </template>
 
 <style>
-@import '@/assets/base.css';
+@import "@/assets/base.css";
 </style>
