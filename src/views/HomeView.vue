@@ -2,11 +2,11 @@
 import List from "../ui/layout/List.vue";
 import Item from "../ui/layout/Item.vue";
 import Divider from "../ui/layout/Divider.vue";
-import StackedOverlap from "../ui/shells/stacked/StackedOverlap.vue";
+import SidebarShell from "../ui/shells/sidebar/SidebarShell.vue";
 </script>
 
 <template>
-  <StackedOverlap>
+  <SidebarShell>
     <template #nav>
       Navs
     </template>
@@ -19,5 +19,5 @@ import StackedOverlap from "../ui/shells/stacked/StackedOverlap.vue";
       <Item> 2 </Item>
       <Item> 3 </Item>
     </List>
-  </StackedOverlap>
+  </SidebarShell>
 </template>

@@ -3,7 +3,7 @@ import { defineComponent } from "vue";
 import type { PropType } from "vue";
 
 export default defineComponent({
-  name: "Stacked",
+  name: "StackedOverlapShell",
   props: {},
   data() {
     return {};
@@ -11,19 +11,19 @@ export default defineComponent({
   methods: {},
 });
 </script>
-
 <template>
 <div class="min-h-full">
-  <slot name="nav"></slot>
-  <div class="py-10">
+  <div class="bg-gray-800 pb-32">
+    <slot name="nav"></slot>
     <slot name="header"></slot>
-    <main>
-      <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <!-- Replace with your content -->
-       <slot></slot>
-        <!-- /End replace -->
-      </div>
-    </main>
   </div>
+
+  <main class="-mt-32">
+    <div class="max-w-7xl mx-auto pb-12 px-4 sm:px-6 lg:px-8">
+      <!-- Replace with your content -->
+      <slot></slot>
+      <!-- /End replace -->
+    </div>
+  </main>
 </div>
 </template>
