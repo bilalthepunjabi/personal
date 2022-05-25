@@ -1,17 +1,18 @@
 <script lang="ts">
 import { defineComponent } from "vue";
-import type { PropType } from 'vue'
-import { ConstrainedEnum } from './types/Container';
+import type { PropType } from "vue";
 
 export default defineComponent({
   name: "Container",
   props: {
     constrained: {
-        type: String as PropType<ConstrainedEnum>,
+        type: Object,
         required: false,
-        default: () => (ConstrainedEnum.FULL),
-        validator: (content: ConstrainedEnum) => {
-            console.log('validating props : content => ',content, typeof(content));
+        default: () => ({
+          narrow : false
+        }),
+        validator: (content) => {
+            console.log('validating props : constrained => ',content, typeof(content));
             return true;
         }
     },
@@ -20,19 +21,15 @@ export default defineComponent({
     return {
     };
   },
-  methods: {
-      narrow(){
-          return this.constrained === ConstrainedEnum.NARROW;
-      }
-  },
+  methods: {},
 });
 </script>
 
 <template>
 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-  <slot v-if="!narrow()"></slot>
-  <div class="max-w-3xl mx-auto" v-if="narrow()">
-    <slot v-if="narrow()"></slot>
+  <slot v-if="!constrained.narrow"></slot>
+  <div class="max-w-3xl mx-auto" v-if="constrained.narrow">
+    <slot v-if="constrained.narrow"></slot>
   </div>
 </div>
 </template>

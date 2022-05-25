@@ -4,10 +4,9 @@ import type { PropType } from 'vue'
 
 import { RouterLink, RouterView } from 'vue-router'
 import Container from './components/Container.vue'
-import { ConstrainedEnum } from './components/types/Container';
 
 interface state {
-  constrained: ConstrainedEnum
+  constrained: Object
 }
 
 export default defineComponent({
@@ -16,11 +15,12 @@ export default defineComponent({
     Container,
     RouterView
   },
-  setup () {
-    const state = reactive<state>({
-      constrained: ref(ConstrainedEnum.NARROW)
-    });
-    return { state }
+  data(){
+    return {
+      constrained : {
+        narrow : false
+      }
+    }
   },
   methods: {
 
